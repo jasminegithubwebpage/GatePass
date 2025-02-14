@@ -1,14 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React from 'react';
+// import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './screens/HomeScreen';
+import GatepassScreen from './screens/GatepassScreen';
+import DetailScreen from './screens/DetailScreen';
+const Stack = createStackNavigator();
 
-const index = () => {
-  return (
-    <View>
-      <Text>index</Text>
-    </View>
-  )
+export default function index() {
+ return(
+      <Stack.Navigator>
+        <Stack.Screen name="GatePass" component={HomeScreen} />
+        <Stack.Screen name="GatepassScreen" component={GatepassScreen} />
+        <Stack.Screen name="DetailScreen" component={DetailScreen} />
+      </Stack.Navigator>
+ );
+  
+
 }
-
-export default index
-
-const styles = StyleSheet.create({})
